@@ -10,7 +10,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     ubuntu.vm.box = "ubuntu/trusty64"
     ubuntu.vm.network :private_network, ip: "192.168.33.21"
     ubuntu.vm.hostname = "ubuntu-trusty64"
-    ubuntu.vm.network :forwarded_port, id: "ssh", guest: 22, host: 2222
+    ubuntu.vm.network :forwarded_port, id: "ssh", guest: 22, host: 3321
 
     ubuntu.vm.provider :virtualbox do |vb|
       vb.customize ["modifyvm", :id, "--memory", "1024"]
@@ -22,7 +22,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     centos.vm.box = "chef/centos-6.5"
     centos.vm.network :private_network, ip: "192.168.33.22"
     centos.vm.hostname = "ansible-centos65"
-    centos.vm.network :forwarded_port, id: "ssh", guest: 22, host: 2223
+    centos.vm.network :forwarded_port, id: "ssh", guest: 22, host: 3322
 
     centos.vm.provider :virtualbox do |vb|
       vb.customize ["modifyvm", :id, "--memory", "1024"]
